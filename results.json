@@ -1,8 +1,53 @@
 [
   {
-    "seat": "700",
+    "seat": "703",
     "name": "Sawant",
-    "sgpi": 7.10,
-    "status": "PASS"
+    "sgpi": 9.10,
+    "status": "PASS",
+    "subjects": [
+      {
+        "name": "Software Project Development",
+        "theory": 78,
+        "internal": 15,
+        "total": 63,
+        "grade": "A"
+      },
+      {
+        "name": "Internet of Things",
+        "theory": 36,
+        "internal": 23,
+        "total": 69,
+        "grade": "A"
+      },
+      {
+        "name": "Advanced Web Development",
+        "theory": 84,
+        "internal": 24,
+        "total": 78,
+        "grade": "O"
+      }
+    ]
+  },
+  {
+    "seat": "702",
+    "name": "Sawant Saniya",
+    "sgpi": 6.60,
+    "status": "PASS",
+    "subjects": [
+      {
+        "name": "Software Project Development",
+        "theory": 32,
+        "internal": 16,
+        "total": 48,
+        "grade": "C"
+      },
+      {
+        "name": "Internet of Things",
+        "theory": 43,
+        "internal": 16,
+        "total": 59,
+        "grade": "B+"
+      }
+    ]
   }
 ]

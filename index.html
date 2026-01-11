@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="style.css">
   <title>Student Result</title>
 </head>
 <body>
+<div class="container">
+  <h2>Student Result Portal</h2>
 
-<h2>Check Result</h2>
+  <input id="seat" placeholder="Enter Seat Number">
+  <button onclick="checkResult()">Check Result</button>
 
-<input id="seat" placeholder="Enter Seat Number">
-<button onclick="checkResult()">Check</button>
+  <div id="output"></div>
+</div>
+
+
+
 
 <p id="output"></p>
 

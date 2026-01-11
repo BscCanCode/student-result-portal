@@ -13,20 +13,56 @@
 <p id="output"></p>
 
 <script>
+let results = [];
+
 fetch("results.json")
-  .then(response => response.json())
-  .then(data => window.results = data);
+  .then(res => res.json())
+  .then(data => results = data);
 
 function checkResult() {
-  const seat = document.getElementById("seat").value;
+  const seat = document.getElementById("seat").value.trim();
+  const output = document.getElementById("output");
+
   const student = results.find(s => s.seat === seat);
 
-  document.getElementById("output").innerText =
-    student
-      ? `Name: ${student.name}, SGPI: ${student.sgpi}, Result: ${student.status}`
-      : "Result not found";
+  if (!student) {
+    output.innerHTML = "<p>Result not found</p>";
+    return;
+  }
+
+  let html = `
+    <h3>${student.name}</h3>
+    <p>Seat No: ${student.seat}</p>
+    <p>Status: ${student.status}</p>
+    <p>SGPI: ${student.sgpi}</p>
+
+    <table border="1" cellpadding="6">
+      <tr>
+        <th>Subject</th>
+        <th>Theory</th>
+        <th>Internal</th>
+        <th>Total</th>
+        <th>Grade</th>
+      </tr>
+  `;
+
+  student.subjects.forEach(sub => {
+    html += `
+      <tr>
+        <td>${sub.name}</td>
+        <td>${sub.theory}</td>
+        <td>${sub.internal}</td>
+        <td>${sub.total}</td>
+        <td>${sub.grade}</td>
+      </tr>
+    `;
+  });
+
+  html += "</table>";
+  output.innerHTML = html;
 }
 </script>
+
 
 </body>
 </html>
